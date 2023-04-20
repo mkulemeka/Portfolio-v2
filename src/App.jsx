@@ -6,7 +6,7 @@ import React from "react";
 
 const App = () => {
   return (
-    <>
+    <section className="bg-fadedBlack min-h-[100vh] text-white">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -14,7 +14,7 @@ const App = () => {
         <Route path="./projects" element={<Projects />} />
         <Route path="./contact" element={<Contact />} />
       </Routes>
-    </>
+    </section>
   );
 };
 
