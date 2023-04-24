@@ -13,6 +13,11 @@ module.exports = {
       poppins: ["Poppins", "sans-serif"],
       montserrat: ["Montserrat", "sans-serif"],
     },
+    fontSize: {
+      heading: "2.5rem",
+      icons: "2rem",
+      regular: "1.2rem",
+    },
   },
   plugins: [],
 };

@@ -6,7 +6,7 @@ import React from "react";
 
 const App = () => {
   return (
-    <section className="bg-fadedBlack min-h-[100vh] text-white">
+    <section className="bg-fadedBlack min-h-[100vh] text-white text-regular">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
