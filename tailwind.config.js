@@ -6,8 +6,13 @@ module.exports = {
     colors: {
       green: "#49c5b6",
       black: "#000",
-      fadedBlack: "#1D1D1D",
+      red: "#FA370C",
+      grey: "#B0B0B0",
+      fadedBlack: "#212224",
+      fadedMoreBlack: "#343639",
       white: "hsl(75, 13%, 94%)",
+      whitey: "#FFFFFF",
+      componentWhitey: "#FCFBFC",
     },
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
