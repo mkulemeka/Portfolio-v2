@@ -1,0 +1,13 @@
+.button-effect {
+  min-width: 10rem;
+  height: 3rem;
+
+  box-shadow: inset 0 0 0 0 var(--fadedMoreBlack);
+  background-color: var(--white);
+  color: var(--fadedMoreBlack);
+
+  &:hover {
+    color: var(--white);
+    box-shadow: inset -9.5rem 0 0 0 var(--fadedMoreBlack);
+  }
+}

@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500&display=swap");
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,5 +13,10 @@
 :root {
   --primary-green: #49c5b6;
   --primary-bg-black: #000;
-  --slate: #26282A;
+  --slate: #26282a;
+  --grey: #b0b0b0;
+  --fadedBlack: #212224;
+  --fadedMoreBlack: #343639;
+  --white: hsl(75, 13%, 94%);
+  --component-Whitey: #fcfbfc;
 }

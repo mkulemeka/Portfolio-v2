@@ -19,9 +19,15 @@ module.exports = {
       montserrat: ["Montserrat", "sans-serif"],
     },
     fontSize: {
-      heading: "2.5rem",
+      heading: "4rem",
+      subHeading: "2.75rem",
       icons: "2rem",
-      regular: "1.2rem",
+      regular: "1.15rem",
+    },
+    fontWeight: {
+      regular: 400,
+      bold: 500,
+      exbold: 600,
     },
   },
   plugins: [],

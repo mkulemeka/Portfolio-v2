@@ -1,3 +1,5 @@
+import "./styles/App.scss";
+
 import { About, Contact, Home, Projects } from "./pages";
 import { Route, Routes, useLocation } from "react-router-dom";
 
