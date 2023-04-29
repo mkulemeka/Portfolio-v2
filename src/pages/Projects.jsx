@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
-const Projects = () => {
+const Projects = ({ setActive }) => {
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+    setActive(currentPath);
+  }, []);
   return (
     <motion.section
       initial={{ opacity: 0 }}

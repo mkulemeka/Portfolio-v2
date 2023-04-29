@@ -1,9 +1,10 @@
 import { BsFacebook, BsGithub, BsTwitter } from "react-icons/bs";
+import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const Home = () => {
+const Home = ({ setActive }) => {
   const socialLinks = [
     { link: "twitter.com", name: "Twitter", tag: <BsTwitter /> },
     { link: "facebook.com", name: "Facebook", tag: <BsFacebook /> },
@@ -27,6 +28,11 @@ const Home = () => {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
   };
+
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+    setActive(currentPath);
+  }, []);
 
   return (
     <motion.main
