@@ -1,10 +1,11 @@
 import { BsFacebook, BsGithub, BsTwitter } from "react-icons/bs";
-import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
+import { SocialLinkButton } from "../components";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
-const Home = ({ setActive }) => {
+const Home = ({ setActive, isDarkMode }) => {
   const socialLinks = [
     { link: "twitter.com", name: "Twitter", tag: <BsTwitter /> },
     { link: "facebook.com", name: "Facebook", tag: <BsFacebook /> },
@@ -29,6 +30,7 @@ const Home = ({ setActive }) => {
     show: { opacity: 1, y: 0 },
   };
 
+  //set path on page load
   useEffect(() => {
     const currentPath = window.location.pathname;
     setActive(currentPath);
@@ -41,7 +43,10 @@ const Home = ({ setActive }) => {
       animate="show"
       className="w-[50%] mx-auto py-20 min-h-screen flex flex-col justify-center"
     >
-      <motion.section variants={item}>
+      <motion.section
+        variants={item}
+        className={`${!isDarkMode && "text-fadedBlack"}`}
+      >
         <h1 className=" text-heading font-montserrat font-exbold">
           Hey, I am <span className="text-green">Mtendere</span>.
         </h1>
@@ -51,13 +56,7 @@ const Home = ({ setActive }) => {
       </motion.section>
       <motion.section variants={item} className="flex gap-10 mt-10">
         {socialLinks.map((socialLink) => (
-          <a
-            href={socialLink.link}
-            key={socialLink.name}
-            className="flex items-center gap-5 py-3 px-5 bg-fadedMoreBlack rounded-[2rem]"
-          >
-            {socialLink.tag} {socialLink.name}
-          </a>
+          <SocialLinkButton socialLink={socialLink} />
         ))}
       </motion.section>
       <motion.section variants={item}>

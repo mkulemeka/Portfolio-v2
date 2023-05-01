@@ -13,9 +13,12 @@ const App = () => {
   const [active, setActive] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-
   return (
-    <section className={`${isDarkMode ? "bg-fadedBlack" : "bg-whitey"} min-h-[100vh] text-white text-regular font-poppins transition ease duration-300`}>
+    <section
+      className={`${
+        isDarkMode ? "bg-fadedBlack" : "bg-whitey"
+      } min-h-[100vh] text-white text-regular font-poppins transition ease duration-300`}
+    >
       <Navbar
         active={active}
         isDarkMode={isDarkMode}
@@ -23,7 +26,10 @@ const App = () => {
       />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.key}>
-          <Route path="/" element={<Home setActive={setActive} />} />
+          <Route
+            path="/"
+            element={<Home isDarkMode={isDarkMode} setActive={setActive} />}
+          />
           <Route path="/about" element={<About setActive={setActive} />} />
           <Route
             path="/projects"
