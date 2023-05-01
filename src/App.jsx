@@ -11,10 +11,16 @@ const App = () => {
   const location = useLocation();
   //determine current active link
   const [active, setActive] = useState("");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
 
   return (
-    <section className="bg-fadedBlack min-h-[100vh] text-white text-regular font-poppins">
-      <Navbar active={active} />
+    <section className={`${isDarkMode ? "bg-fadedBlack" : "bg-whitey"} min-h-[100vh] text-white text-regular font-poppins transition ease duration-300`}>
+      <Navbar
+        active={active}
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
+      />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.key}>
           <Route path="/" element={<Home setActive={setActive} />} />
