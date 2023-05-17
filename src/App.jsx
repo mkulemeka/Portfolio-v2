@@ -12,6 +12,7 @@ const App = () => {
   //determine current active link
   const [active, setActive] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <section
