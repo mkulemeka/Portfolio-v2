@@ -6,14 +6,35 @@ const About = ({ setActive }) => {
     const currentPath = window.location.pathname;
     setActive(currentPath);
   }, []);
+
+  const aboutLoad = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        duration: 1,
+        staggerChildren: 0.25,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  };
+
   return (
     <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 1, duration: 1 }}
-      className="w-[65%] mx-auto py-20"
+      variants={aboutLoad}
+      initial="hidden"
+      animate="show"
+      className="w-[50%] mx-auto py-20 min-h-screen flex flex-col justify-center"
     >
-      About
+      <motion.section variants={item} className={`text-heading font-exbold font-montserrat`}>
+        <h1 className=" text-green">About</h1>
+      </motion.section>
     </motion.section>
   );
 };

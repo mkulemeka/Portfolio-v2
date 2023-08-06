@@ -2,17 +2,21 @@ import "./styles/App.scss";
 
 import { About, Contact, Home, Projects } from "./pages";
 import { Route, Routes, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import { AnimatePresence } from "framer-motion";
 import { Navbar } from "./components";
-import { useState } from "react";
 
 const App = () => {
   const location = useLocation();
   //determine current active link
   const [active, setActive] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  });
 
   return (
     <section

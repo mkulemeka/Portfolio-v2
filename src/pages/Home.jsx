@@ -56,7 +56,7 @@ const Home = ({ setActive, isDarkMode }) => {
       </motion.section>
       <motion.section variants={item} className="flex gap-10 mt-10">
         {socialLinks.map((socialLink) => (
-          <SocialLinkButton socialLink={socialLink} />
+          <SocialLinkButton key={socialLink.name} socialLink={socialLink} />
         ))}
       </motion.section>
       <motion.section variants={item}>
