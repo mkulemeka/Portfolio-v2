@@ -35,7 +35,7 @@ const Navbar = ({ active, isDarkMode, setIsDarkMode }) => {
 
   return (
     <>
-      <nav className="w-[8rem] md:fixed z-10 h-[100%] flex flex-col items-center justify-center gap-10">
+      <nav id="nav" className="w-[8rem] md:fixed z-10 h-[100%] flex flex-col items-center justify-center gap-10">
         <div className="w-[50%] h-[4rem] bg-fadedMoreBlack flex flex-col items-center justify-center gap-3 p-2 rounded-full">
           <button
             className="p-4 rounded-full transition ease-in-out"

@@ -18,9 +18,9 @@ const App = () => {
     <section
       className={`${
         isDarkMode ? "bg-fadedBlack" : "bg-whitey"
-      } min-h-[100vh] text-white text-regular font-poppins transition ease duration-300`}
+      } flex min-h-[100vh] text-white text-regular font-poppins transition ease duration-300`}
     >
-      <Navbar
+      <Navbar className="mobile_nav"
         active={active}
         isDarkMode={isDarkMode}
         setIsDarkMode={setIsDarkMode}
