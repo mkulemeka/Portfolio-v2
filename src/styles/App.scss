@@ -11,3 +11,14 @@
     box-shadow: inset -9.5rem 0 0 0 var(--fadedMoreBlack);
   }
 }
+
+#nav {
+
+
+}
+
+@media screen and (max-width: 460px) {
+  #nav {
+    display: none;
+  }
+}
