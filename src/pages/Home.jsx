@@ -56,19 +56,22 @@ const Home = ({ setActive, isDarkMode }) => {
       </motion.section>
       <motion.section variants={item} className="flex gap-10 mt-10">
         {socialLinks.map((socialLink) => (
-          <SocialLinkButton socialLink={socialLink} />
+          <SocialLinkButton key={socialLink.name} socialLink={socialLink} />
         ))}
       </motion.section>
       <motion.section variants={item}>
         <p className="text-regular text-grey mt-10 font-poppins">
           My name is Mtendere Kulemeka and I am a rising web developer from{" "}
-          <a href="" className="text-green font-bold">
+          <a
+            href="https://en.wikipedia.org/wiki/Malawi"
+            className="text-green font-bold"
+          >
             Malawi
           </a>{" "}
           and currently based in Philadelphia. I am versed in other
           technological fields such as Networking and Cyber Security. I am
           currently a senior student at{" "}
-          <a href="temple.edu" className="text-green font-bold">
+          <a href="https://temple.edu" className="text-green font-bold">
             Temple University
           </a>{" "}
           and I am pursuing a persuing a B.Sc in Information Science{" "}

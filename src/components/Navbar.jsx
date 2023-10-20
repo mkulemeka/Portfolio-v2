@@ -7,20 +7,20 @@ import { Link } from "react-router-dom";
 const Navbar = ({ active, isDarkMode, setIsDarkMode }) => {
   //page links
   const pages = [
-    ["/", <ImHome />],
-    ["/about", <IoPerson />],
-    ["/projects", <FaLaptopCode />],
-    ["/contact", <IoMail />],
+    { path: "/", icon: <ImHome />, label: "Home" },
+    { path: "/about", icon: <IoPerson />, label: "About" },
+    { path: "/projects", icon: <FaLaptopCode />, label: "Projects" },
+    { path: "/contact", icon: <IoMail />, label: "Contact" },
   ];
 
   //social links on navigation
   const socialLinks = [
     {
-      tag: <FaInstagram />,
+      icon: <FaInstagram />,
       link: "instagram.com",
     },
     {
-      tag: <FaLinkedinIn />,
+      icon: <FaLinkedinIn />,
       link: "linkedin.com/mkulemeka",
     },
   ];
@@ -31,11 +31,12 @@ const Navbar = ({ active, isDarkMode, setIsDarkMode }) => {
     console.log(isDarkMode);
   };
 
-  console.log(isDarkMode);
-
   return (
     <>
-      <nav id="nav" className="w-[8rem] md:fixed z-10 h-[100%] flex flex-col items-center justify-center gap-10">
+      <nav
+        id="nav"
+        className="w-[8rem] fixed z-10 h-[100%] flex flex-col items-center justify-center gap-10"
+      >
         <div className="w-[50%] h-[4rem] bg-fadedMoreBlack flex flex-col items-center justify-center gap-3 p-2 rounded-full">
           <button
             className="p-4 rounded-full transition ease-in-out"
@@ -53,23 +54,27 @@ const Navbar = ({ active, isDarkMode, setIsDarkMode }) => {
             isDarkMode ? "bg-fadedMoreBlack text-white" : "bg-white text-black"
           } flex flex-col items-center gap-3 p-2 rounded-[3rem] transition duration-300`}
         >
-          {pages.map((page) => (
-            <Link
-              key={page[0]}
-              to={page[0]}
-              className={`p-4 rounded-full  transition ease-in-out duration-300 ${
-                active === page[0]
-                  ? isDarkMode
-                    ? "bg-white text-fadedBlack"
-                    : "bg-fadedBlack text-white"
-                  : isDarkMode
-                  ? "hover:bg-fadedBlack"
-                  : "hover:bg-whitey"
-              }`}
-            >
-              {page[1]}
-            </Link>
-          ))}
+          {pages.map((page) => {
+            let activeClass = "";
+            if (active === page.path) {
+              activeClass = isDarkMode
+                ? "bg-white text-fadedBlack"
+                : "bg-fadedBlack text-white";
+            } else {
+              activeClass = isDarkMode
+                ? "hover:bg-fadedBlack"
+                : "hover:bg-whitey";
+            }
+            return (
+              <Link
+                key={page.label}
+                to={page.path}
+                className={`p-4 rounded-full  transition ease-in-out duration-300 ${activeClass}`}
+              >
+                {page.icon}
+              </Link>
+            );
+          })}
         </div>
         <div className="w-[50%] bg-fadedMoreBlack flex flex-col items-center gap-3 p-2 rounded-[3rem]">
           {socialLinks.map((socialLink) => (
@@ -78,7 +83,7 @@ const Navbar = ({ active, isDarkMode, setIsDarkMode }) => {
               href={socialLink.link}
               className="p-4 rounded-full hover:bg-green transition ease-in-out duration-300"
             >
-              {socialLink.tag}
+              {socialLink.icon}
             </a>
           ))}
         </div>
